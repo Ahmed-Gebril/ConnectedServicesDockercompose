@@ -1,0 +1,11 @@
+An example response is:
+
+Hello from ::ffff:172.25.0.1:41866
+to ::ffff:172.25.0.2:8894
+Hello from ::ffff:172.25.0.1:50420
+to ::ffff:172.25.0.3:8893
+
+
+the notation '::ffff' is subnet prefix for IPv4 addressses placed inside an IPv6 space.
+the address '172.25.0.2' is docker internal host IP. and '41866' is the port number at which the service resides
+Same applies to the second request.

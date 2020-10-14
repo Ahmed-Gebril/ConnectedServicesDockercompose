@@ -1,0 +1,39 @@
+version: '2'
+services:
+  service1:
+    image : "service1"
+    build: service1
+    command: node service1
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "8001:8894"
+    networks:
+      - pingnet
+    volumes:
+      - ./data:/data
+    environment:
+      ServiceName: service1
+
+
+
+  service2:
+    image : "service2"
+    build: service2
+    command: node service2
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "8893:8893"
+    networks:
+      - pingnet
+    volumes:
+      - ./data:/data
+    environment:
+      ServiceName: service_1
+networks:
+  pingnet:
+volumes:
+  data: {}
